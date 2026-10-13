@@ -18,8 +18,8 @@ The installer runs per user and adds Start Menu shortcuts. Open IoTServer, confi
 
 Allen-Bradley Ethernet, Modbus Ethernet, OPC UA Client, ControlLogix Ethernet, Mitsubishi Ethernet, Siemens TCP/IP Ethernet, MQTT Client, and Memory Based.
 
-These adapters implement documented subsets. Full Kepware parity, physical PLC interoperability, and protocol certification are not claimed. OPC DA and serial drivers are excluded. Version 1.0.0 uses a local administration interface and runs interactively, not as a Windows service. MQTT TLS/authentication and memory persistence are pending.
+These adapters implement documented subsets. Full driver coverage, physical PLC interoperability, and protocol certification are not claimed. OPC DA and serial drivers are excluded. Version 1.0.0 uses a local administration interface and runs interactively, not as a Windows service. MQTT TLS/authentication and memory persistence are pending.
 
 Artifacts are unsigned. Detailed capabilities, setup instructions, limitations, dependency licenses, and required MPL dependency sources are included in the downloads.
 
-This public repository contains release documentation and binary downloads. IoTServer application source is maintained separately in a private repository. This project is independent of PTC Kepware and other referenced vendors.
+This public repository contains release documentation and binary downloads. IoTServer application source is maintained separately in a private repository. This project is independent of the referenced device vendors.

@@ -26,7 +26,7 @@ Storage and upgrades
   Data contains project.json, .iotserver-pki, .iotserver-secrets and logs.
   Stop the installed host before updating or uninstalling. The installer does
   not stop active hosts automatically. Uninstall preserves user data.
-  No installed Kepware files, certificates, credentials or projects are bundled.
+  No existing application files, certificates, credentials or projects are bundled.
   Credentials use Windows DPAPI and belong to the Windows user who entered them.
   Existing development projects are not migrated automatically. Save/export a
   project and import it in the installed app; enter credentials and establish
@@ -42,7 +42,7 @@ Portable use
   launch the installed script with an alternate port; projects are not shared.
 
 Known limits
-  This release implements documented driver subsets, not full Kepware parity.
+  This release implements documented driver subsets, with the limitations described in the bundled documentation.
   Read NETWORK_DRIVERS.txt, OPCUA.txt and RUNNING.txt for precise limitations.
   Physical PLC interoperability and protocol certification remain unverified.
   Administration is local and runs interactively, not as a Windows service.
