@@ -1,9 +1,27 @@
-IoTServer 1.1.0
+IoTServer 1.2.0
 Released October 13, 2026
 
-Expanded driver functionality, plugin configuration, and the black-and-blue UI.
+Context menus, expanded plugin behavior, and shared mailbox infrastructure.
 
-New since 1.0.0
+New since 1.1.0
+  Node-specific right-click menus across Connectivity and all six plugin trees.
+  Tags appear in the tree. Add, Properties, Duplicate, Delete, profile import/
+  export and history reads are available on their applicable nodes. Shift+F10
+  and the Menu key provide keyboard access. Validate, Apply Project, Start
+  Runtime and Stop Runtime move into the main header; the old toolbar is removed.
+  Advanced Tags supports Good-quality rising-edge triggers. Alarm conditions
+  can compare a source tag against another tag as well as a constant threshold.
+  Profile Library can load UTF-8 script text into its editor; scripts are stored
+  but are not executed.
+  IoT Gateway adds MQTT QoS 0 and 2 alongside QoS 1, plus initial-value and
+  quality-change publish controls. Persistent retries may duplicate delivery.
+  DataLogger can choose source or collection timestamps. Local Historian adds
+  per-item collection intervals. See PLUGINS.txt for limits and exact semantics.
+  All eight mailbox adapters share bank freshness/reset and worker lifecycle;
+  wire protocols share TCP/UDP transport with separate protocol handlers.
+  Existing protocol-specific register bounds and transport limits are preserved.
+
+Included since 1.1.0
   Six plugin branches in the configuration tree: Advanced Tags, Alarms & Events,
   Profile Library, DataLogger, IoT Gateway, and Local Historian. Working subsets
   include derived values, local alarm transitions, ODBC logging, MQTT QoS 1
@@ -16,7 +34,7 @@ New since 1.0.0
   Allen-Bradley and PCCC file models support BCD/LBCD conversion and validation.
   Mitsubishi MC 1E/3E and Siemens S7 numeric block arrays with full-span bounds.
   MQTT Client QoS 2 receive handshake and duplicate suppression, plus exact
-  Int64/UInt64 and String mappings. IoT Gateway remains a QoS 1 publisher.
+  Int64/UInt64 and String mappings.
   Channel-scoped Memory Based bank IDs, shared aliases, and write refresh.
   OPC UA Client String and exact Int64/UInt64 reads and writes.
   Black-and-blue interface, application icon, and expanded device editors.
@@ -37,7 +55,7 @@ Included
   Per-user Windows installer, Start Menu launch/stop shortcuts, portable ZIP.
 
 Install and run
-  Run IoTServer-1.1.0-windows-x64-setup.exe. Administrator rights are not needed.
+  Run IoTServer-1.2.0-windows-x64-setup.exe. Administrator rights are not needed.
   Select IoTServer in the Start Menu. Configuration opens at 127.0.0.1:5180.
   Add or open a project, Apply, then Start Runtime. Runtime starts stopped.
   Save persists configuration. Closing the browser does not stop the host.

@@ -1,3 +1,3 @@
-c28f74e8061f20cdc3ef737d7fe8bfa0717d397c5585940ad0822537a2130caa  IoTServer-1.1.0-windows-x64-portable.zip
-5cbbdeab748e2aa867fa9447e89ae02b4defb413fe798d201c6491aabe54a2b4  IoTServer-1.1.0-windows-x64-setup.exe
-8bf82d65af984ea13519ac731032ae72ca93d8ff783934456a79080ecdb2c180  RELEASE_NOTES.txt
+74279455ed28298c2aa2845f48e9cd75925a0ced04b2a4293b76d2c381c57de1  IoTServer-1.2.0-windows-x64-portable.zip
+5f6a32b2c82ffefacbe4624684fff0dbb281516e5dd05b41925bc0eaf58be5bc  IoTServer-1.2.0-windows-x64-setup.exe
+5f1c825e9e0a2ca6137dc08c64ddfbd536e0739e34ef79c3dbeb278dd657706f  RELEASE_NOTES.txt
