@@ -1,0 +1,55 @@
+IoTServer 1.0.0
+Released October 13, 2026
+
+First packaged Windows x64 release of the independent Rust IoTServer runtime.
+
+Included
+  Eight adapters: Allen-Bradley Ethernet, Modbus Ethernet, OPC UA Client,
+  ControlLogix Ethernet, Mitsubishi Ethernet, Siemens TCP/IP Ethernet,
+  MQTT Client and Memory Based. No serial drivers and no OPC DA.
+  OPC UA server for exposing configured tags, with certificates and security.
+  Local browser configuration, channel/device/tag editing, live values and
+  quality, validated project apply, explicit saves, writes and event logging.
+  Per-user Windows installer, Start Menu launch/stop shortcuts, portable ZIP.
+
+Install and run
+  Run IoTServer-1.0.0-windows-x64-setup.exe. Administrator rights are not needed.
+  Select IoTServer in the Start Menu. Configuration opens at 127.0.0.1:5180.
+  Add or open a project, Apply, then Start Runtime. Runtime starts stopped.
+  Save persists configuration. Closing the browser does not stop the host.
+  Use the Stop IoTServer shortcut to close the background host. Unsaved drafts
+  are preserved as recovery-*.json; use Open to restore them on the next launch.
+
+Storage and upgrades
+  Program files: %LOCALAPPDATA%\Programs\IoTServer
+  User data:     %LOCALAPPDATA%\IoTServer
+  Data contains project.json, .iotserver-pki, .iotserver-secrets and logs.
+  Stop the installed host before updating or uninstalling. The installer does
+  not stop active hosts automatically. Uninstall preserves user data.
+  No installed Kepware files, certificates, credentials or projects are bundled.
+  Credentials use Windows DPAPI and belong to the Windows user who entered them.
+  Existing development projects are not migrated automatically. Save/export a
+  project and import it in the installed app; enter credentials and establish
+  certificate trust in the new data folder.
+
+Portable use
+  Extract the ZIP, then run Start-IoTServer.ps1 with Windows PowerShell:
+    powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Start-IoTServer.ps1
+  An alternate port can be selected with -Port 5182. Optional -DataDirectory
+  sets a separate absolute data directory for an isolated instance.
+  Use the same -DataDirectory with Stop-IoTServer.ps1 when stopping it.
+  If port 5180 is occupied by a development preview, close that preview or
+  launch the installed script with an alternate port; projects are not shared.
+
+Known limits
+  This release implements documented driver subsets, not full Kepware parity.
+  Read NETWORK_DRIVERS.txt, OPCUA.txt and RUNNING.txt for precise limitations.
+  Physical PLC interoperability and protocol certification remain unverified.
+  Administration is local and runs interactively, not as a Windows service.
+  Remote administration, full multi-user management and OPC DA are not included.
+  MQTT TLS/authentication and Memory Based persistence are not implemented.
+  The artifacts are unsigned; no publisher signing certificate was configured.
+
+Third-party software
+  See THIRD_PARTY.txt and licenses/INDEX.json for dependency licenses.
+  Unmodified MPL dependency source archives are included in licenses/sources.
