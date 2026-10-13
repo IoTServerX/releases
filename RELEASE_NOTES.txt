@@ -1,7 +1,31 @@
-IoTServer 1.0.0
+IoTServer 1.1.0
 Released October 13, 2026
 
-First packaged Windows x64 release of the independent Rust IoTServer runtime.
+Expanded driver functionality, plugin configuration, and the black-and-blue UI.
+
+New since 1.0.0
+  Six plugin branches in the configuration tree: Advanced Tags, Alarms & Events,
+  Profile Library, DataLogger, IoT Gateway, and Local Historian. Working subsets
+  include derived values, local alarm transitions, ODBC logging, MQTT QoS 1
+  publishing, and bounded local history. Profile Library stores configuration;
+  script execution is not implemented. See PLUGINS.txt for each plugin's scope.
+  Expanded Modbus TCP/UDP addressing, block reads, write behavior, and mailbox
+  operation. See MODBUS_RUNTIME.txt and MODBUS_MAILBOX.txt for supported paths.
+  Ten ControlLogix Ethernet model choices: native symbolic CIP and six PCCC
+  file models, with routed requests, arrays, batching, and connection handling.
+  Allen-Bradley and PCCC file models support BCD/LBCD conversion and validation.
+  Mitsubishi MC 1E/3E and Siemens S7 numeric block arrays with full-span bounds.
+  MQTT Client QoS 2 receive handshake and duplicate suppression, plus exact
+  Int64/UInt64 and String mappings. IoT Gateway remains a QoS 1 publisher.
+  Channel-scoped Memory Based bank IDs, shared aliases, and write refresh.
+  OPC UA Client String and exact Int64/UInt64 reads and writes.
+  Black-and-blue interface, application icon, and expanded device editors.
+
+Validation
+  Workspace tests cover loopback wire exchanges, local OPC UA sessions, driver
+  boundaries, plugin lifecycle, and API behavior. Installer validation covers
+  install, launch, upgrade protection, draft recovery, and data retention.
+  Physical PLC qualification has not been performed.
 
 Included
   Eight adapters: Allen-Bradley Ethernet, Modbus Ethernet, OPC UA Client,
@@ -13,7 +37,7 @@ Included
   Per-user Windows installer, Start Menu launch/stop shortcuts, portable ZIP.
 
 Install and run
-  Run IoTServer-1.0.0-windows-x64-setup.exe. Administrator rights are not needed.
+  Run IoTServer-1.1.0-windows-x64-setup.exe. Administrator rights are not needed.
   Select IoTServer in the Start Menu. Configuration opens at 127.0.0.1:5180.
   Add or open a project, Apply, then Start Runtime. Runtime starts stopped.
   Save persists configuration. Closing the browser does not stop the host.

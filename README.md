@@ -6,19 +6,25 @@ Windows downloads for IoTServer, an independent Rust industrial connectivity ser
 
 [Latest release](https://github.com/IoTServerX/releases/releases/latest)
 
-Version 1.0.0 is available for Windows x64:
+Version 1.1.0 is available for Windows x64:
 
-- [Windows installer](https://github.com/IoTServerX/releases/releases/download/v1.0.0/IoTServer-1.0.0-windows-x64-setup.exe)
-- [Portable ZIP](https://github.com/IoTServerX/releases/releases/download/v1.0.0/IoTServer-1.0.0-windows-x64-portable.zip)
-- [SHA-256 checksums](https://github.com/IoTServerX/releases/releases/download/v1.0.0/SHA256SUMS.txt)
+- [Windows installer](https://github.com/IoTServerX/releases/releases/download/v1.1.0/IoTServer-1.1.0-windows-x64-setup.exe)
+- [Portable ZIP](https://github.com/IoTServerX/releases/releases/download/v1.1.0/IoTServer-1.1.0-windows-x64-portable.zip)
+- [SHA-256 checksums](https://github.com/IoTServerX/releases/releases/download/v1.1.0/SHA256SUMS.txt)
 
 The installer runs per user and adds Start Menu shortcuts. Open IoTServer, configure a project, apply it, and start the runtime. Closing the browser leaves the host running; use **Stop IoTServer** to close it. Upgrades and uninstall preserve user data.
+
+## New in 1.1.0
+
+Expanded driver behavior includes ten ControlLogix model choices, PCCC BCD values, Mitsubishi and Siemens numeric arrays, MQTT Client QoS 2, shared Memory Based banks, and exact OPC UA String/Int64/UInt64 mappings.
+
+Six plugin branches are included in the black-and-blue configuration tree: Advanced Tags, Alarms & Events, Profile Library, DataLogger, IoT Gateway, and Local Historian. See the bundled plugin guide for supported subsets. Profile Library stores configuration; it does not execute scripts.
 
 ## Supported adapters
 
 Allen-Bradley Ethernet, Modbus Ethernet, OPC UA Client, ControlLogix Ethernet, Mitsubishi Ethernet, Siemens TCP/IP Ethernet, MQTT Client, and Memory Based.
 
-These adapters implement documented subsets. Full driver coverage, physical PLC interoperability, and protocol certification are not claimed. OPC DA and serial drivers are excluded. Version 1.0.0 uses a local administration interface and runs interactively, not as a Windows service. MQTT TLS/authentication and memory persistence are pending.
+These adapters implement documented subsets. Full driver coverage, physical PLC interoperability, and protocol certification are not claimed. OPC DA and serial drivers are excluded. Version 1.1.0 uses a local administration interface and runs interactively, not as a Windows service. MQTT TLS/authentication and memory persistence are pending.
 
 Artifacts are unsigned. Detailed capabilities, setup instructions, limitations, dependency licenses, and required MPL dependency sources are included in the downloads.
 
