@@ -1,4 +1,4 @@
-9258454fbbec4728108759d0847d6895aa886c452cf7ef585e9439e484626195  IoTServer-1.3.0-third-party-notices.zip
-ff12139fb8a42f876a68308dd3f53237bfa1d582703744926daa2d4ce09f56c9  IoTServer-1.3.0-windows-x64-portable.zip
-2112c0701f955111acf78d0d3c6c97995770c3963dcbecc0b04e8f093292f8a2  IoTServer-1.3.0-windows-x64-setup.exe
-639bf78afccdaf0810271477462aef56ed37f7914bb66f1540cddbf862ce6101  RELEASE_NOTES.txt
+d5795d95838a8d294abbf931183dc01c2e850d917af63f4f245b7b4e49ef66e4  IoTServer-1.3.0-third-party-notices.zip
+8f1c600814a2afbc8354813438e5d98b2bd71eb29d718a0777b212cf1f3d6088  IoTServer-1.3.0-windows-x64-portable.zip
+ae5484bff25d6f37c46c297f95a3f899bec77ef48aa1e3a3e958e570bfee7325  IoTServer-1.3.0-windows-x64-setup.exe
+111a4453967cf667e8d3273f287e987b1b857b7a1d239aceedcb29efec214e11  RELEASE_NOTES.txt
