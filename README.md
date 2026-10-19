@@ -1,12 +1,12 @@
 # IoT Server
 
 Agentic industrial infrastructure for Windows. Connect equipment, organize signals,
-and build visual maps with Lua, simulation and AI-assisted engineering.
+and build visual maps with modeling, transformation, simulation and AI-assisted engineering.
 
 ## Download
 
-- [Windows installer](https://github.com/IoTServerX/releases/releases/download/v1.3.0/IoTServer-1.3.0-windows-x64-setup.exe)
-- [Portable ZIP](https://github.com/IoTServerX/releases/releases/download/v1.3.0/IoTServer-1.3.0-windows-x64-portable.zip)
+- [Windows installer](https://github.com/IoTServerX/releases/releases/download/v1.3.1/IoTServer-1.3.1-windows-x64-setup.exe)
+- [Portable ZIP](https://github.com/IoTServerX/releases/releases/download/v1.3.1/IoTServer-1.3.1-windows-x64-portable.zip)
 - [Release notes, checksums and dependency notices](https://github.com/IoTServerX/releases/releases/latest)
 
 Setup offers **Desktop** or **Windows service** mode, both installed in

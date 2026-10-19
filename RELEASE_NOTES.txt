@@ -1,73 +1,58 @@
-IoT Server 1.3.0
-Released October 18, 2026
+IoTServer 1.3.1
+Released October 19, 2026
 
-Agentic industrial infrastructure for Windows
+Agentic industrial infrastructure for Windows: industrial connections, a unified
+signal namespace, visual mapping, modeling, transformation, simulation and
+AI-assisted engineering.
 
-IoT Server combines industrial connections, a unified signal namespace, visual
-maps, Lua, simulation and AI-assisted engineering in one browser workspace.
-The new workspace replaces the former plugin-oriented interface.
+Changes since 1.3.0
+-------------------
+Canvas and Worksheet are two views of the same field assignments, with synchronized
+selection and one Properties Save/Cancel workflow. The former separate Bindings
+layer is removed. Input record grids support organizing signals into records,
+dragging directly onto records/fields and retaining shared field names.
 
-Connections, signals and maps
-- Browse connections, groups, signals and maps in the project tree.
-- Build maps from multiple inputs using Lua functions, stateful aggregates,
-  routes and explicit field bindings.
-- Publish to MQTT, including configured vendor profiles, and SQL destinations;
-  expose source and derived signals through OPC UA; map values to writable
-  controller signals where the selected driver supports them.
-- Use simulation and read-only previews before enabling real deliveries.
-- Save configuration separately from Apply and runtime Start/Stop.
+Nodes can be placed freely on the canvas. Moving an existing node saves its
+position automatically, separately from unfinished configuration changes and
+without a runtime Apply. Independent layout revisions protect concurrent edits.
+New unsaved nodes remain part of their creation draft.
 
-AI-assisted engineering through MCP
-- Authenticated Streamable HTTP endpoint plus iotserver-mcp.exe Desktop bridge.
-- Discover drivers, models and native settings schemas; prepare configurations,
-  inspect and edit existing maps, preview sample data and save with revision
-  checks and idempotent request IDs.
-- Author controller write outputs and explicit native connection/signal write
-  permissions. Preview is prospective and sends no controller commands.
-- MCP Save does not Apply or Start the runtime. An operator activates the project.
-- Configure tokens and listener settings in Administration > MCP Server.
-  See MCP-SETUP.txt and the supplied templates for Desktop configuration.
+Connector dragging shows an immediate line preview. Long orthogonal connections
+use separated parallel tracks where space permits. Connector selection highlights
+the line without a bounding rectangle. Output field labels no longer look like
+connector circles; Write outputs show explicit per-record destinations, such as
+Motor01 -> Follower01.SpeedDemand.
 
-Administration and licensing
-- Accounts/roles, broker credentials, MQTT command configuration, OPC UA
-  certificates/trust and Windows service status share the Administration tree.
-- Administration > Licensing displays the machine ID and accepts a full license.
-- Without a full license, the runtime has a four-hour process trial. Expiry
-  stops the runtime and displays Trial Expired. Restart iotserver.exe to begin
-  another trial session, or activate a full license.
-- License issuing tools and private signing material are not distributed.
+Includes the complete source snapshot and driver/runtime work committed since
+the previous release, plus mapper, explorer, property-editor and regression-test
+updates. This release does not establish additional physical-hardware qualification
+or complete vendor-driver parity.
 
-Drivers
-- This build registers 71 driver identities: 48 implemented runtimes and
-  23 unavailable skeletons, with 128 advertised models.
-- Driver/model metadata describes the available configuration and protocol
-  subsets. Catalog presence does not imply complete vendor parity.
-- Includes the MicroLogix bit-copy validation fix: copying B3:0/3 to B3:0/4
-  no longer triggers a false same-target feedback rejection.
-- Physical-hardware qualification and protocol certification remain incomplete.
+Installation and upgrade
+------------------------
+Choose the Windows x64 setup executable or portable ZIP. Both Desktop and Windows
+service installation modes use C:\Program Files\IoTServer. Service data uses
+C:\ProgramData\IoTServer. The IS desktop shortcut opens http://localhost:5180;
+Desktop mode starts through Start IoTServer in the Start Menu.
 
-Windows installation
-- Windows x64 installer and portable ZIP are supplied below.
-- Setup offers Desktop or Windows service mode. Both install into
-  C:\Program Files\IoTServer and use the IS monogram shortcut.
-- The desktop shortcut opens http://localhost:5180. In Desktop mode, first use
-  Start IoTServer from the Start Menu. Stop IoTServer stops the desktop host.
-- Service mode starts the host with Windows and keeps data in
-  C:\ProgramData\IoTServer. Runtime acquisition still requires Apply and Start.
-- Rerun setup to change modes. Protected credentials may require re-entry when
-  changing the Windows account that runs the host.
-- Stop the host before upgrading and back up the project and security stores.
-  Closing the browser alone does not stop the host.
-- Portable: extract the ZIP and run Start-IoTServer.ps1 with Windows PowerShell.
-- Windows binaries are unsigned. Clean-VM installation, mode-conversion and
-  reboot qualification are not complete.
+Back up your project and security stores. Stop the host before upgrading; closing
+the browser does not stop it. Refresh browser tabs after replacing the host.
+Configure and Save your project, then explicitly Apply and Start when ready.
 
-Verification and downloads
-- Package checksums, sealed build provenance, all three executable hashes,
-  archive integrity, installer staging and private-key exclusion were checked.
-- Retained packaged MCP acceptance covers the Desktop bridge, driver metadata,
-  map editing, controller-write authoring and native permission workflow.
-  Portable lifecycle/Memory Based smoke results are also retained.
-- Download the separate third-party-notices ZIP for dependency licenses and
-  required corresponding dependency sources. Application source is not included.
-- SHA256SUMS.txt covers the installer, portable ZIP, notices ZIP and these notes.
+Without a full license, the runtime has a four-hour process trial. After expiry,
+restart iotserver.exe to begin another trial session. Administration > Licensing
+shows the machine ID and accepts a full license key.
+
+The application includes the host, ODBC helpers, MCP Desktop bridge, launch/setup
+scripts and reviewed examples. MCP authoring Save does not Apply or Start the
+runtime. The separate dependency-notices ZIP contains dependency licenses and
+corresponding dependency sources. Verify assets using SHA256SUMS.txt; the release
+provenance file records source, build and packaging identities.
+
+Limitations
+-----------
+Windows executables are unsigned. Clean-VM installer/service-mode/reboot
+qualification remains incomplete. Driver support is limited to documented subsets;
+hardware qualification and protocol certification remain incomplete. Unimplemented
+driver skeletons remain unavailable. See the maintained driver documentation for
+individual capabilities and limits.
