@@ -1,12 +1,60 @@
-IoTServer 1.3.1
-Released October 19, 2026
+IoTServer 1.3.4
+- The application, desktop/installer icons and website use the supplied DIME
+  mark, with Data In Motion Enterprise above IoT Server in the brand lockup.
+- Administration > MCP Server now offers a Claude Desktop extension and Connect
+  Codex setup download, with protected token entry and read-only connection tests.
+  Both use the existing MCP endpoint without manual configuration-file editing.
+
+Local testing build - October 20, 2026
 
 Agentic industrial infrastructure for Windows: industrial connections, a unified
 signal namespace, visual mapping, modeling, transformation, simulation and
 AI-assisted engineering.
 
-Changes since 1.3.0
+Changes since 1.3.1
 -------------------
+Startup now restores the last successfully applied configuration without requiring
+Apply again. Newer saved edits remain pending. Each project file has an adjacent
+.applied.json checkpoint with configuration only, not live samples or commands.
+Older projects need one initial Apply to establish this checkpoint.
+
+Project menu > Edit project properties > Startup adds Run on startup (default off).
+Save and Apply to enable automatic acquisition/mapping startup. A newer unapplied
+change to that setting does not affect restart behavior. Both Desktop and Windows
+service launches use the same restoration path. Invalid checkpoints or startup
+failures leave management available with diagnostics instead of activating saved
+edits silently. Driver, credential, write-admission and license checks still apply.
+
+Administration > MCP Server packages its native bridge and configured endpoint
+for Claude Desktop and Codex. Downloads contain no token; setup requests one in
+a protected field or hidden prompt. Existing token plaintext cannot be recovered
+from the stored verifier. The Codex helper protects its saved token for the
+interactive Windows account, independently of the server's service identity.
+
+Saved MCP settings and credential changes activate without restarting the host.
+The UI displays pending activation and listener errors. Credential rotation retires
+existing sessions; clients reconnect with the new token. Unavailable settings
+retire the listener, and transient bind failures are retried. Command-line MCP
+overrides remain authoritative for that process.
+
+OPC UA configuration guidance now makes the existing Save, then Apply lifecycle
+explicit: endpoint changes do not require an executable restart. Clients reconnect
+after endpoint changes.
+
+In Desktop installation mode, the IoTServer desktop shortcut starts IoTServer if needed,
+waits for readiness and opens the browser. A running host is reused. In Windows
+service mode the desktop shortcut continues to open the local web interface.
+
+Upgrades and uninstall automatically stop Desktop hosts and the recognized
+Windows service, and disconnect this installation's MCP bridge processes. Setup
+attempts the normal Desktop shutdown first, then stops remaining host processes
+loaded from this installation, including manually started or account-protected
+hosts. No preliminary uninstall or manual bridge disconnection is required. Claude
+and bridges from other installations remain running. Saved user data is retained;
+remaining file locks still block removal with an explanation.
+
+Included changes from 1.3.1
+---------------------------
 Canvas and Worksheet are two views of the same field assignments, with synchronized
 selection and one Properties Save/Cancel workflow. The former separate Bindings
 layer is removed. Input record grids support organizing signals into records,
@@ -32,11 +80,12 @@ Installation and upgrade
 ------------------------
 Choose the Windows x64 setup executable or portable ZIP. Both Desktop and Windows
 service installation modes use C:\Program Files\IoTServer. Service data uses
-C:\ProgramData\IoTServer. The IS desktop shortcut opens http://localhost:5180;
-Desktop mode starts through Start IoTServer in the Start Menu.
+C:\ProgramData\IoTServer. The IS desktop shortcut opens http://localhost:5180, starting the host first in
+Desktop mode. Start IoTServer remains available in the Start Menu.
 
-Back up your project and security stores. Stop the host before upgrading; closing
-the browser does not stop it. Refresh browser tabs after replacing the host.
+Back up your project and security stores. Save pending edits before upgrading. Setup stops this installation's host and
+MCP bridge automatically; Claude itself remains open. A client that continually
+restarts the bridge or another application holding files can still block replacement. Refresh browser tabs after replacing the host.
 Configure and Save your project, then explicitly Apply and Start when ready.
 
 Without a full license, the runtime has a four-hour process trial. After expiry,
