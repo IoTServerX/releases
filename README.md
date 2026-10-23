@@ -7,8 +7,8 @@ and build visual maps with modeling, transformation, simulation and AI-assisted 
 
 ## Download
 
-- [Windows installer](https://github.com/IoTServerX/releases/releases/download/v1.3.4/IoTServer-1.3.4-windows-x64-setup.exe)
-- [Portable ZIP](https://github.com/IoTServerX/releases/releases/download/v1.3.4/IoTServer-1.3.4-windows-x64-portable.zip)
+- [Windows installer](https://github.com/IoTServerX/releases/releases/download/v1.3.11/IoTServer-1.3.11-windows-x64-setup.exe)
+- [Portable ZIP](https://github.com/IoTServerX/releases/releases/download/v1.3.11/IoTServer-1.3.11-windows-x64-portable.zip)
 - [Release notes, checksums and dependency notices](https://github.com/IoTServerX/releases/releases/latest)
 
 Setup offers **Desktop** or **Windows service** mode, both installed in
